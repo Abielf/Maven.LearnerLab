@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class People<E extends Person> implements Iterable<E>{
-    private List<E> personList=new ArrayList<E>();
+public abstract class People<E extends Person> implements Iterable<E>{
+    protected List<E> personList;
+
+
+    public People(){
+        personList=new ArrayList<E>();
+    }
 
     public void add(E e){personList.add(e);}
 
@@ -34,5 +39,8 @@ public class People<E extends Person> implements Iterable<E>{
     public void removeAll(){personList.clear();}
     public int count(){return personList.size();}
 
+    abstract public E[] toArray();
+
     public Iterator<E> iterator(){return personList.iterator();}
+
 }

@@ -11,6 +11,7 @@ public class Students extends People<Student>{
 
 
     private Students(){
+        super();
         add(new Student("Abiel Figueroa", 1));
         add(new Student("Lena Litouka", 2));
         add(new Student("Xiong Yuan", 3));
@@ -32,10 +33,8 @@ public class Students extends People<Student>{
 
     public Student[] toArray(){
         Student[] classRoom= new Student[count()];
-        int i=0;
-        Iterator IT=iterator();
-        while (IT.hasNext()){
-            classRoom[i]=(Student)IT.next();
+        for (int i=0;i< personList.size();i++) {
+            classRoom[i] = personList.get(i);
         }
         return classRoom;
         }

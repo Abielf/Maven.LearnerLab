@@ -3,17 +3,22 @@ package io.zipcoder.interfaces;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Map;
+
 public class ZipCodeWilmingtonTest {
 
     ZipCodeWilmington Z = ZipCodeWilmington.getInstance();
-    Instructor d=new Instructor("Jeff",19);
+
+
 
 
     @Test
-    public void testHostLecture(){
-        Double totalHours=0.0;
-        boolean itsTrue=true;
-    Z.hostLecture(d,28.0);
+    public void testHostLecture() {
+    Z.hostLecture(15, 42.0);
+    Double expected=3.0;
+    Map<String, Double> mappy=Z.getStudyMap();
+    Double actual= mappy.get("Abiel Figueroa");
+    Assert.assertEquals(expected,actual,.0001);
     }
 }
 /*Create a TestZipCodeWilmington class.
